@@ -1,20 +1,32 @@
 ﻿using System;
 
-namespace HelloWorld
+namespace Bulldozer
 {
     class Program
     {
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
-            var dozer = new BullDozer();
-            dozer.color = "yellow";
-            dozer.size = "tiny";
-            Console.WriteLine("The Bulldozer is " + dozer.color);
+            var worker = new FactoryWorker();
+            worker.count(4);
+            worker.count(5);
         }
     }
-    public class BullDozer
+    public class FactoryWorker
     {
-        public string color { get; set;}
-        public string size { get; set;}
+        public FactoryWorker ()
+        {
+
+        }
+        public void count (int number)
+        {
+            if(Total == null)
+            Total = 0;
+
+            Total = Total + number;
+            Console.WriteLine(Total.ToString());
+        }
+
+        public int Total {get; set;}
     }
 }
